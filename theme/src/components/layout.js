@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { css, Global } from '@emotion/core';
-import { Layout as StyledLayout, Header } from 'theme-ui';
+import { Layout as StyledLayout } from 'theme-ui';
 import { useInterface } from '../reducers/interface';
 import { useStore } from '../reducers/store';
+import Header from './Header';
 
 const Layout = ({ children }) => {
 	const [ stateInterface, dispatchInterface ] = useInterface();
@@ -75,9 +76,7 @@ const Layout = ({ children }) => {
 					}
 				`}
 			/>
-			<Header>
-				<span>SITE WITH SHOPIFY</span>
-			</Header>
+			<Header isDesktopViewport={isDesktopViewport} productImagesBrowserStatus={productImagesBrowserStatus} />
 			<div>{children}</div>
 		</StyledLayout>
 	);

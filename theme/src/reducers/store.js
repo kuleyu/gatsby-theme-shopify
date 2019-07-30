@@ -26,7 +26,6 @@ const Ctx = React.createContext(initialState);
 
 export const StoreProvider = ({ children, options }) => {
 	const { shopName, accessToken } = options;
-	console.log('OPTIONS', options);
 	const client = Client.buildClient({
 		domain: `${shopName}.myshopify.com`,
 		storefrontAccessToken: accessToken

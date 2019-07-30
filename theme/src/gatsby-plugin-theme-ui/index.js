@@ -4,6 +4,21 @@
  * @see https://theme-ui.com/gatsby-plugin/
  */
 
+import { keyframes } from '@emotion/core';
+
+const simpleEntry = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+`;
+
+const deadSimpleEntry = keyframes`
+  from {
+    opacity: .25;
+  }
+`;
+
 export default {
 	space: [ 2, 4, 8, 12, 16, 24, 32, 40, 48 ],
 	colors: {
@@ -43,8 +58,21 @@ export default {
 		desktop: 1000,
 		hd: 1300
 	},
+	dimensions: {
+		headerHeight: '80px',
+		cartWidthDesktop: '400px',
+		contributorAreaBarHeight: '50px',
+		pictureBrowserAction: {
+			widthDesktop: '200px',
+			heightMobile: '80px'
+		}
+	},
 	sizes: {
 		container: 1200
+	},
+	animations: {
+		simpleEntry: `${simpleEntry} .75s ease forwards`,
+		deadSimpleEntry: `${deadSimpleEntry} .5s ease forwards`
 	},
 	styles: {
 		Layout: {
