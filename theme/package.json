@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-theme-jam-example",
-  "author": "Jason Lengstorf <jason@gatsbyjs.com>",
+  "name": "gatsby-theme-shopify",
+  "author": "Daniel montes <dmontes@plukke.mx>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jlengstorf/gatsby-theme-jam-example.git"
+    "url": "https://github.com/damex989/gatsby-theme-shopify.git"
   },
   "version": "1.0.1",
   "main": "index.js",
@@ -20,8 +20,13 @@
   },
   "dependencies": {
     "@emotion/core": "^10.0.14",
+    "@emotion/styled": "^10.0.14",
     "@mdx-js/react": "^1.0.21",
+    "gatsby-plugin-emotion": "^4.1.2",
+    "gatsby-plugin-layout": "^1.1.2",
     "gatsby-plugin-theme-ui": "^0.2.2",
+    "gatsby-source-shopify2": "^2.0.7",
+    "shopify-buy": "^2.6.1",
     "theme-ui": "^0.2.2"
   },
   "keywords": [

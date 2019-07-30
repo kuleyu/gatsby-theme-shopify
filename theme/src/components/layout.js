@@ -1,36 +1,86 @@
-import React from "react"
-import { css, Global } from "@emotion/core"
-import { Layout as StyledLayout, Header, Main, Container } from "theme-ui"
-import { graphql, useStaticQuery } from "gatsby"
+import React, { useEffect } from 'react';
+import { css, Global } from '@emotion/core';
+import { Layout as StyledLayout, Header } from 'theme-ui';
+import { useInterface } from '../reducers/interface';
+import { useStore } from '../reducers/store';
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+	const [ stateInterface, dispatchInterface ] = useInterface();
+	const [ stateStore, dispatchStore ] = useStore();
 
-  return (
-    <StyledLayout>
-      <Global
-        styles={css`
-          body {
-            margin: 0;
-          }
-        `}
-      />
-      <Header>
-        <span>{data.site.siteMetadata.title}</span>
-      </Header>
-      <Main>
-        <Container>{children}</Container>
-      </Main>
-    </StyledLayout>
-  )
-}
+	const { isDesktopViewport, productImagesBrowserStatus, currentProductImages, productImageFeatured, cartStatus } =
+		stateInterface || {};
+	const { client } = stateStore || {};
 
-export default Layout
+	const mediaQueryToMatch = `(min-width: 1000px)`;
+	let dekstopMediaQuery = null;
+
+	useEffect(() => {
+		dekstopMediaQuery = window && window.matchMedia(mediaQueryToMatch);
+		dekstopMediaQuery && dekstopMediaQuery.addListener(updateViewPortState);
+
+		initializeCheckout();
+		updateViewPortState();
+
+		return () => dekstopMediaQuery.removeListener(updateViewPortState);
+	}, []);
+
+	const initializeCheckout = async () => {
+		const isBrowser = typeof window !== 'undefined';
+		const existingCheckoutID = isBrowser ? localStorage.getItem('shopify_checkout_id') : null;
+
+		const setCheckoutInState = (checkout) => {
+			if (isBrowser) localStorage.setItem('shopify_checkout_id', checkout.id);
+			dispatchStore({ type: 'SET_SHOPIFY_CHECKOUT', payload: checkout });
+		};
+
+		const createNewCheckout = () => client.checkout.create();
+		const fetchCheckout = (id) => client.checkout.fetch(id);
+
+		if (existingCheckoutID) {
+			try {
+				const checkout = await fetchCheckout(existingCheckoutID);
+				if (!checkout.completedAt) {
+					setCheckoutInState(checkout);
+					return;
+				}
+			} catch (error) {
+				localStorage.setItem('shopify_checkout_id', null);
+			}
+		}
+
+		const newCheckout = await createNewCheckout();
+		setCheckoutInState(newCheckout);
+	};
+
+	const updateViewPortState = (e) => {
+		dispatchInterface({ type: 'UPDATE_VIEW_PORT', payload: dekstopMediaQuery && dekstopMediaQuery.matches });
+	};
+
+	return (
+		<StyledLayout>
+			<Global
+				styles={css`
+					html {
+						box-sizing: border-box;
+					}
+					*,
+					*:before,
+					*:after {
+						box-sizing: inherit;
+					}
+					body {
+						-webkit-tap-highlight-color: rgba(0, 0, 0, 0.05);
+						margin: 0 auto;
+					}
+				`}
+			/>
+			<Header>
+				<span>SITE WITH SHOPIFY</span>
+			</Header>
+			<div>{children}</div>
+		</StyledLayout>
+	);
+};
+
+export default Layout;

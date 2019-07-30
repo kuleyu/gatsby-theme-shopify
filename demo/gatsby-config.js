@@ -5,5 +5,13 @@
  */
 
 module.exports = {
-  plugins: ["gatsby-theme-jam-example"],
-}
+	plugins: [
+		{
+			resolve: 'gatsby-theme-shopify',
+			options: {
+				shopName: 'graphql',
+				accessToken: 'dd4d4dc146542ba7763305d71d1b3d38'
+			}
+		}
+	]
+};
