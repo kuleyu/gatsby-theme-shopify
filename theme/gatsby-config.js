@@ -1,10 +1,23 @@
 module.exports = ({
 	shopName = 'graphql',
 	accessToken = 'dd4d4dc146542ba7763305d71d1b3d38',
-	imagesPath = 'src/images'
+	imagesPath = 'src/images',
+	contentPath = 'data',
+	socialMedia = {
+		facebook: 'https://www.facebook.com/plukketech/'
+	},
+	email = 'plukkemx@gmail.com'
 }) => ({
 	siteMetadata: {
-		title: 'Gatsby Theme Jam Example Submission'
+		siteTitle: 'Theme shopify',
+		siteTitleAlt: 'Theme shopify - Gatsby Theme from @Plukke',
+		siteUrl: 'http://localhost:8000',
+		siteDescription: 'Theme shopify',
+		siteLanguage: 'en',
+		siteImage: '/banner.png',
+		author: '@dma_d',
+		socialMedia,
+		email
 	},
 	plugins: [
 		'gatsby-plugin-theme-ui',
@@ -16,6 +29,19 @@ module.exports = ({
 			options: {
 				name: 'images',
 				path: imagesPath
+			}
+		},
+		{
+			resolve: 'gatsby-transformer-json',
+			options: {
+				typeName: 'Section' // a fixed string
+			}
+		},
+		{
+			resolve: 'gatsby-source-filesystem',
+			options: {
+				name: 'data',
+				path: contentPath
 			}
 		},
 		{

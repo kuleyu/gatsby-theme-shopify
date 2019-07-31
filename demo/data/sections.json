@@ -1,0 +1,66 @@
+[
+	{
+		"id": "1",
+		"path": "/",
+		"title": "El mejor sabor del puerco en tu mesa",
+		"description": "Ofrecemos una variedad de carnes de cerdo cocidas (carnitas, chicharrón, quesadillas, vinagreta y carne envasada al vacío a su mesa con el mejor sabor de la cocina mexicana).",
+		"textButton": "Comprar",
+		"image": "background_header.jpg"
+	},
+	{
+		"id": "2",
+		"path": "/",
+		"title": "Productos Destacados",
+		"description": "descripción"
+	},
+	{
+		"id": "3",
+		"path": "/",
+		"title": "Proceso de compra",
+		"description": "descripción",
+		"steps": [
+			{
+				"icon": "hand-pointer",
+				"title": "Ordena",
+				"description": "Una breve descripción"
+			},
+			{
+				"icon": "credit-card",
+				"title": "Confirma",
+				"description": "Una breve descripción"
+			},
+			{
+				"icon": "truck",
+				"title": "Recibe",
+				"description": "Una breve descripción"
+			}
+		]
+	},
+	{
+		"id": "4",
+		"path": "/",
+		"title": "Contactanos",
+		"description": "Cualquier duda, queja o sugerencia no dudes en decirnos, lo más importante para nosotros es la satisfacción de nuestros clientes."
+	},
+	{
+		"id": "5",
+		"path": "/about-us",
+		"title": "Nosotros",
+		"description": "Descripción",
+		"image": "background_aboutUs"
+	},
+	{
+		"id": "6",
+		"path": "/about-us",
+		"title": "Titulo",
+		"description": "Descripción",
+		"image": "about-us-1"
+	},
+	{
+		"id": "7",
+		"path": "/about-us",
+		"title": "Titulo",
+		"description": "Descripción",
+		"image": "about-us-2"
+	}
+]

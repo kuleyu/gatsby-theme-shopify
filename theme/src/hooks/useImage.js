@@ -5,7 +5,7 @@ const useImage = (imageName) => {
 		query {
 			allFile(filter: { sourceInstanceName: { eq: "images" } }) {
 				nodes {
-					relativePath
+					name
 					childImageSharp {
 						# Specify the image processing specifications right in the query.
 						# Makes it trivial to update as your page's design changes.
@@ -17,8 +17,6 @@ const useImage = (imageName) => {
 			}
 		}
 	`);
-
-	console.log('FILES IMAGES', nodes);
 
 	const [ file ] = nodes.filter(({ name }) => name === imageName);
 

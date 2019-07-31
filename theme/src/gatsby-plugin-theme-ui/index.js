@@ -24,9 +24,7 @@ export default {
 	colors: {
 		text: '#232129',
 		background: '#fff',
-		primary: '#639',
 		gray: [ '#efefef', '#ddd', '#333', '#111' ],
-		background: '#fff',
 		lightest: '#ffffff',
 		brandLight: '#f5f3f7',
 		brandBright: '#e0d6eb',
@@ -41,6 +39,10 @@ export default {
 		accent: '#ffb238',
 		error: '#ec1818',
 		lemon: '#ffdf37'
+	},
+	radius: {
+		default: 2,
+		large: 4
 	},
 	fonts: {
 		default:

@@ -4,6 +4,8 @@ import { Layout as StyledLayout } from 'theme-ui';
 import { useInterface } from '../reducers/interface';
 import { useStore } from '../reducers/store';
 import Header from './Header';
+import Footer from './Footer';
+import PageContent from './PageContent';
 
 const Layout = ({ children }) => {
 	const [ stateInterface, dispatchInterface ] = useInterface();
@@ -77,7 +79,14 @@ const Layout = ({ children }) => {
 				`}
 			/>
 			<Header isDesktopViewport={isDesktopViewport} productImagesBrowserStatus={productImagesBrowserStatus} />
-			<div>{children}</div>
+			<PageContent
+				cartStatus={cartStatus}
+				isDesktopViewport={isDesktopViewport}
+				productImagesBrowserStatus={productImagesBrowserStatus}
+			>
+				{children}
+			</PageContent>
+			<Footer />
 		</StyledLayout>
 	);
 };
