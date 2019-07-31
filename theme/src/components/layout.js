@@ -6,10 +6,18 @@ import { useStore } from '../reducers/store';
 import Header from './Header';
 import Footer from './Footer';
 import PageContent from './PageContent';
+import ProductImagesBrowser from './ProductPage/ProductImagesBrowser';
 
 const Layout = ({ children }) => {
-	const [ stateInterface, dispatchInterface ] = useInterface();
-	const [ stateStore, dispatchStore ] = useStore();
+	const interfaceReducer = useInterface();
+	const stateInterface = interfaceReducer && interfaceReducer[0];
+	const dispatchInterface = interfaceReducer && interfaceReducer[1];
+	// const [ stateInterface, dispatchInterface ] = interfaceReducer || [];
+
+	const storeReducer = useStore();
+	// const [ stateStore, dispatchStore ] = storeReducer || [];
+	const stateStore = storeReducer && storeReducer[0];
+	const dispatchStore = storeReducer && storeReducer[1];
 
 	const { isDesktopViewport, productImagesBrowserStatus, currentProductImages, productImageFeatured, cartStatus } =
 		stateInterface || {};
@@ -87,6 +95,16 @@ const Layout = ({ children }) => {
 				{children}
 			</PageContent>
 			<Footer />
+			{currentProductImages &&
+			currentProductImages.length > 0 && (
+				<ProductImagesBrowser
+					images={currentProductImages}
+					position={productImagesBrowserStatus}
+					imageFeatured={productImageFeatured}
+					toggle={() => dispatchInterface({ type: 'TOGGLE_PRODUCT_IMAGES', payload: null })}
+					isDesktopViewport={isDesktopViewport}
+				/>
+			)}
 		</StyledLayout>
 	);
 };

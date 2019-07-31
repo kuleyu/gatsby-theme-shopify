@@ -1,7 +1,7 @@
 import React from 'react';
 import SectionHeader from '../components/AboutUs/SectionHeader';
 import SectionData from '../components/AboutUs/SectionData';
-// import SEO from '../components/seo';
+import SEO from '../components/seo';
 import useImage from '../hooks/useImage';
 
 const AboutUs = ({ data: { allSection: { nodes } } }) => {
@@ -11,7 +11,7 @@ const AboutUs = ({ data: { allSection: { nodes } } }) => {
 
 	return (
 		<React.Fragment>
-			{/* <SEO title={title} description={description} image={file.childImageSharp.fluid.src} /> */}
+			<SEO title={title} description={description} image={file.childImageSharp.fluid.src} />
 			<SectionHeader title={title} description={description} file={file} />
 			<SectionData sections={sections} />
 		</React.Fragment>

@@ -24,6 +24,7 @@ module.exports = ({
 		'gatsby-plugin-sharp',
 		'gatsby-transformer-sharp',
 		'gatsby-plugin-emotion',
+		'gatsby-plugin-react-helmet',
 		{
 			resolve: 'gatsby-source-filesystem',
 			options: {
