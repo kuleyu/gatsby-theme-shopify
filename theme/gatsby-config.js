@@ -11,7 +11,7 @@ module.exports = ({
 	siteMetadata: {
 		siteTitle: 'Theme shopify',
 		siteTitleAlt: 'Theme shopify - Gatsby Theme from @Plukke',
-		siteUrl: 'http://localhost:8000',
+		siteUrl: 'https://inspiring-bassi-e58832.netlify.com',
 		siteDescription: 'Theme shopify',
 		siteLanguage: 'en',
 		siteImage: '/banner.png',
