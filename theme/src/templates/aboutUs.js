@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import SectionHeader from '../components/AboutUs/SectionHeader';
 import SectionData from '../components/AboutUs/SectionData';
 import SEO from '../components/seo';

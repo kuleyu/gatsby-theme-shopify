@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import SectionHeader from '../components/Home/SectionHeader';
 import SectionFeaturedProducts from '../components/Home/SectionFeaturedProducts';
 import SectionProcess from '../components/Home/SectionProcess';
