@@ -1,5 +1,5 @@
 import React from 'react';
-import useSiteMetadata from '../hooks/useSiteMetaData';
+import useSiteMetadata from '../hooks/useSiteMetadata';
 
 import { Helmet } from 'react-helmet';
 

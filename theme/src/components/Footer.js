@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import useSiteMetadata from '../hooks/useSiteMetaData';
+import useSiteMetadata from '../hooks/useSiteMetadata';
 
 const FooterRoot = styled.footer`
 	align-items: center;

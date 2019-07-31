@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { Link as GatsbyLink, useStaticQuery, graphql } from 'gatsby';
 import Image from 'gatsby-image';
-import useClickOutside from '../hooks/useClickOutSide';
+import useClickOutside from '../hooks/useClickOutside';
 import Cart from './Cart';
 
 const HeaderRoot = styled.header`
