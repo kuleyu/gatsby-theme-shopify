@@ -10,7 +10,7 @@ require('dotenv').config({
 module.exports = {
 	plugins: [
 		{
-			resolve: 'gatsby-theme-shopify',
+			resolve: '@plukke/gatsby-theme-shopify',
 			options: {
 				shopName: 'graphql',
 				accessToken: 'dd4d4dc146542ba7763305d71d1b3d38',
