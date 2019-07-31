@@ -43,7 +43,7 @@ export const Thumbnail = styled.a`
 
 const ProductThumbnails = ({ images, className = '' }) => {
 	const interfaceReducer = useInterface();
-	const dispatch = interfaceReducer && [ 1 ];
+	const dispatch = interfaceReducer && interfaceReducer[1];
 
 	const handleClick = (image) => (event) => {
 		event.preventDefault();

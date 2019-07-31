@@ -141,6 +141,10 @@ const Actions = styled.div`
 
 const CloseButton = styled(SecondaryButton)`
   position: relative;
+  svg {
+
+	margin-right: 8px;
+  }
 `;
 
 const ActionsThumbnails = styled(ProductThumbnails)`

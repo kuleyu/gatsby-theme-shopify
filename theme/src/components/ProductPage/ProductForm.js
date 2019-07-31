@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import styled from '@emotion/styled';
 import { Label, Input, Fieldset, Submit, Select } from '../elements/FormElements';
-import Link from '../elements/Link';
+// import Link from '../elements/Link';
 import { useStore } from '../../reducers/store';
 
 const Form = styled.form`
@@ -189,10 +189,10 @@ const ProductForm = ({ id: rawId, variants }) => {
 				<SizeFieldset>
 					<Label htmlFor="variant">
 						Opciones
-						<Link to="/product-details">
+						{/* <Link to="/product">
 							<FontAwesomeIcon icon="info-circle" />
 							<span>Size Chart</span>
-						</Link>
+						</Link> */}
 					</Label>
 					<Select id="variant" value={formValues['variant']} name="variant" onChange={handleChange}>
 						<option disabled value="">

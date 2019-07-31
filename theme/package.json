@@ -1,11 +1,11 @@
 {
-  "name": "gatsby-theme-shopify",
+  "name": "@plukke/gatsby-theme-shopify",
   "author": "Daniel montes <dmontes@plukke.mx>",
   "repository": {
     "type": "git",
     "url": "https://github.com/damex989/gatsby-theme-shopify.git"
   },
-  "version": "1.0.10",
+  "version": "1.0.11",
   "main": "index.js",
   "license": "MIT",
   "peerDependencies": {

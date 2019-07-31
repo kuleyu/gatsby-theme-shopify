@@ -61,7 +61,7 @@ const ProductPage = (product) => {
 		<React.Fragment>
 			<ProductPageRoot>
 				<Container>
-					{state && state.isDesktopViewport === null ? null : !(state && state.isDesktopViewport) ? (
+					{!(state && state.isDesktopViewport) ? (
 						<ProductImagesMobile images={images} imageOnClick={imageOnClick} />
 					) : (
 						<ProductImagesDesktop
