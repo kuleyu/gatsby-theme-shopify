@@ -165,7 +165,7 @@ const SectionContact = ({ title, description, apiData, shopName }) => {
 							/>
 						</SizeFieldset>
 						<SizeFieldset>
-							<Label htmlFor="name">Correo</Label>
+							<Label htmlFor="email">Correo</Label>
 							<Input
 								name="email"
 								type="email"
@@ -176,7 +176,7 @@ const SectionContact = ({ title, description, apiData, shopName }) => {
 							/>
 						</SizeFieldset>
 						<SizeFieldset>
-							<Label htmlFor="name">Mensaje</Label>
+							<Label htmlFor="message">Mensaje</Label>
 							<TextArea
 								name="message"
 								type="textarea"
@@ -186,7 +186,7 @@ const SectionContact = ({ title, description, apiData, shopName }) => {
 								value={formValues['message']}
 							/>
 						</SizeFieldset>
-						<SubmitButton type="subtmi" disabled={loading}>
+						<SubmitButton type="submit" disabled={loading}>
 							<PulseLoader color={theme.colors.lightest} sizeUnit={'px'} size={12} loading={loading} />
 							{!loading && (
 								<React.Fragment>

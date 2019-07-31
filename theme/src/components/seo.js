@@ -22,7 +22,7 @@ const SEO = ({ title, description, pathname, image, children }) => {
 		url: pathname || '',
 		image: `${siteUrl}${image || defaultImage}`
 	};
-	console.log(seo);
+
 	return (
 		<Helmet title={title} defaultTitle={defaultTitle} titleTemplate={`%s | ${siteTitle}`}>
 			<html lang={siteLanguage} />
@@ -32,6 +32,8 @@ const SEO = ({ title, description, pathname, image, children }) => {
 			<meta property="og:url" content={seo.url} />
 			<meta property="og:description" content={seo.description} />
 			<meta property="og:image" content={seo.image} />
+			<meta property="og:image:height" content="600" />
+			<meta property="og:image:width" content="600" />
 			<meta property="og:type" content="website" />
 			<meta property="og:image:alt" content={seo.description} />
 			<meta name="twitter:card" content="summary_large_image" />

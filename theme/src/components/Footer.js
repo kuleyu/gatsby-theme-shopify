@@ -58,7 +58,7 @@ const Footer = () => {
 			<Row>
 				Contactanos por nuetras redes sociales
 				{Object.keys(socialMedia).map((key, index) => (
-					<SocialButton key={index} href={socialMedia[key]}>
+					<SocialButton key={index} href={socialMedia[key]} alt={key}>
 						<FontAwesomeIcon icon={[ 'fab', key ]} />
 					</SocialButton>
 				))}
