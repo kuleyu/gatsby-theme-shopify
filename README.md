@@ -1,5 +1,5 @@
 # Gatsby Theme Shopify
-See the live [demo](url)
+See the live [demo](https://inspiring-bassi-e58832.netlify.app/)
 ## Installation
 To use this theme in your Gatsby sites, just follow these instructions:
 1.  Install theme
